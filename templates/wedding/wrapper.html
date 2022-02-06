@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {%csrf_token%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'wedding/css/bootstrap.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'wedding/css/bootstrap-grid.min.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'wedding/css/style.css'%}" type="text/css">
+    <title>Wedding day</title>
+</head>
+<body>
+    <header>
+        {%include "wedding/header.html"%}
+    </header>
+    <section>
+        {%include "wedding/main_page.html"%}
+    </section>
+
+    <section>
+        {%include "wedding/love_story.html"%}
+    </section>
+        {%include "wedding/wedding_info.html"%}
+    <script src="{% static 'wedding/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'wedding/js/timer.js'%}"></script>
+</body>
+</html>
