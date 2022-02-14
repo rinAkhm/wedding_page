@@ -7,7 +7,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans&family=Ubuntu:wght@400;700&display=swap"
+          rel="stylesheet">
     {% load static %}
     <link rel="stylesheet" href="{% static 'wedding/css/bootstrap.min.css'%}" type="text/css">
     <link rel="stylesheet" href="{% static 'wedding/css/bootstrap-grid.min.css'%}" type="text/css">
@@ -25,8 +26,16 @@
     <section>
         {%include "wedding/love_story.html"%}
     </section>
+    <section>
         {%include "wedding/wedding_info.html"%}
-    <script src="{% static 'wedding/js/bootstrap.min.js'%}"></script>
-    <script src="{% static 'wedding/js/timer.js'%}"></script>
+    </section>
+    <section>
+        {%include "wedding/form.html"%}
+    </section>
+     <section>
+        {%include "wedding/map.html"%}
+    </section>
+<script src="{% static 'wedding/js/bootstrap.min.js'%}"></script>
+<script src="{% static 'wedding/js/timer.js'%}"></script>
 </body>
 </html>

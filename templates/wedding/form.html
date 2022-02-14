@@ -1,0 +1,25 @@
+<div class="container-xl">
+    <div class="row py-5 text-center">
+        <h3>Подвердите, Пожалуйста, своё присутсвие на торжестве</h3>
+        <p>Ваши ответы на вопросы очень помогут нам при организации свадьбы</p>
+        <form method="POST">
+            {% csrf_token %}
+                <div class="row form-group">
+                    {%for field in form%}
+                    <div class="col-md-12 input-text">{{field.label_tag}}</div>
+                    <div class="col-md-12">{{field}}</div>
+                    {%if field.errors%}
+                        {%for error in field.errors%}
+                        <div class="alert alert-danger">
+                            {{error}}
+                        </div>
+                            {%endfor%}
+                        {%endif%}
+                    {%endfor%}
+                    <input class="btn-form mx-auto" type="submit" value="Отправить">
+
+                </div>
+        </form>
+    </div>
+</div>
+

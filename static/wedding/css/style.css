@@ -170,3 +170,76 @@ h1, h2, p{
     background-color: #F3EAC0;
     border-radius: 50%;
 }
+
+.alert{
+    color:red;
+}
+
+.form-group{
+    margin:10px 0;
+}
+
+.form-group{
+    margin: 0 auto;
+    width: 450px;
+
+}
+
+.input-text{
+    width:100%;
+    font-size:25px;
+}
+
+#id_attendance{
+    width:100%;
+    height:45px;
+    margin: 0 auto 15 px;
+    border-radius: 3px;
+    padding-left:25px;
+    font-size:18px;
+    border: 1px solid #bbbbbb;
+
+}
+
+#id_housing{
+    width:100%;
+    height:45px;
+    margin: 0 auto 15px;
+    border-radius: 3px;
+    padding-left:25px;
+    font-size:18px;
+    border: 1px solid #bbbbbb;
+
+}
+
+.input_filed{
+    margin: 0;
+    display:block;
+    height:45px;
+    border-radius: 3px;
+    border: 1px solid #bbbbbb;
+    font-size:18px;
+    padding-left:25px;
+    width:100%;
+
+}
+.select_box{
+    font-size:18px;
+    padding-bottom:70px
+}
+
+.btn-form{
+    padding: 15px 0;
+    width: 100%;
+    height: 55px;
+    display: block;
+    text-align: center;
+    font-weight: 900;
+    transition: all 0.5s ease;
+}
+
+.btn-form :hover{
+    transition:0.9s;
+    border: 2px solid #922C40;
+
+}
