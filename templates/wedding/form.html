@@ -1,25 +1,26 @@
-<div class="container-xl">
-    <div class="row py-5 text-center">
+<div class="pt-5 container-xl" id="form">
+    <div class="row py-2 text-center">
         <h3>Подвердите, Пожалуйста, своё присутсвие на торжестве</h3>
         <p>Ваши ответы на вопросы очень помогут нам при организации свадьбы</p>
-        <form method="POST">
+    </div>
+    <div class="row text-center">
+        <form class="col-12" action="" method="POST">
             {% csrf_token %}
-                <div class="row form-group">
-                    {%for field in form%}
-                    <div class="col-md-12 input-text">{{field.label_tag}}</div>
-                    <div class="col-md-12">{{field}}</div>
-                    {%if field.errors%}
-                        {%for error in field.errors%}
-                        <div class="alert alert-danger">
-                            {{error}}
-                        </div>
-                            {%endfor%}
-                        {%endif%}
-                    {%endfor%}
-                    <input class="btn-form mx-auto" type="submit" value="Отправить">
-
+            <div class="row wrapper-form">
+                {%for f in form%}
+                <div class="col-8 form-line py-2">
+                    <lable class=" form-lable" for="{{f.id_for_label}}">{{f.label}}:</lable>
+                    {{f}}
                 </div>
+                {%endfor%}
+            </div>
+            <input class="row justify-content-center btn-form" type="submit" value="Отправить" onmousedown="viewDiv()">
         </form>
+    </div>
+
+    <div id="message" class="mx-auto alert alert-success alert-dismissible fade show" role="alert">
+        {{success_message}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 </div>
 

@@ -7,6 +7,7 @@ authors = ["rinAkhm <rin_akhm@bk.ru>"]
 [tool.poetry.dependencies]
 python = "^3.9"
 Django = "^4.0.2"
+django-multiselectfield = "^0.1.12"
 
 [tool.poetry.dev-dependencies]
 

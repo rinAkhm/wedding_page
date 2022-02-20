@@ -1,24 +1,23 @@
 from django import forms
 
+from .models import *
 
-class WeddingForm(forms.Form):
-    attendance = forms.ChoiceField(label='', required=True, choices=(
-        (1, 'Я приду / Мы пиредем'),
-        (2, 'Буду со своей парой'),
-        (3, 'Не смогу прийти')
-    ))
-    name = forms.CharField(required=True, label='', min_length=2, max_length=30,
-                           initial="Введите Имя", widget=forms.TextInput(attrs={"class": "input_filed"}))
-    surname = forms.CharField(required=True, label='', min_length=2, max_length=50,
-                              initial="Введите Фамилию", widget=forms.TextInput(attrs={"class": "input_filed"}))
-    housing = forms.ChoiceField(required=True, label="Нужна ли помощь с размещением?", choices=(
-        (1, 'Да'),
-        (2, 'Нет')
-    ))
-    drinks = forms.MultipleChoiceField(label="Предпочтения по напиткам", choices=(
-        (1, 'Вино'),
-        (2, 'Шампанское'),
-        (3, 'Водка'),
-        (4, 'Коньяк'),
-        (5, 'Виски')),
-                                       widget=forms.CheckboxSelectMultiple(attrs={"class": "select_box"}), )
+
+class WeddingForm(forms.ModelForm):
+    def __int__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['drink'].empty_lable = "ff"
+
+    class Meta:
+        model = WeddingData
+        # attendance = forms.ModelChoiceField(queryset=Attendance.objects.all(),  to_field_name="to_be"),
+        # drink = forms.ModelMultipleChoiceField(queryset=WeddingData.objects.drink_set.all())
+
+        fields = ['attendance', 'name', 'surname', 'housing', 'drink']
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-input'}),
+            'surname': forms.TextInput(attrs={'class': 'form-input'}),
+            'attendance': forms.Select(attrs={'class': 'select-field'}),
+            'drink': forms.CheckboxSelectMultiple(attrs={'class': 'select-multiple'}),
+            'housing': forms.CheckboxInput(attrs={'class': 'checkbox-btn'})
+        }
