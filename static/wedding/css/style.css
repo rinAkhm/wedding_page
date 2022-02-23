@@ -258,4 +258,9 @@ label {
     padding-right:10px;
 }
 
+success: function(response){
+                    $('form#feedback-form-send :input').removeAttr('disabled');
+                    alert('Письмо отправлено. Ждите ответа');
+                }
+
 

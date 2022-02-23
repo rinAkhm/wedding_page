@@ -36,8 +36,3 @@ document.addEventListener('DOMContentLoaded', function() {
   // вызываем функцию countdownTimer каждую секунду
   timerId = setInterval(countdownTimer, 1000);
 });
-
-
-function viewDiv(){
-  document.getElementById("message").style.display = "visible";
-};

@@ -16,7 +16,7 @@ def wedding_form(request):
             surname = page_form.cleaned_data['surname']
             page_form.save()
             success_message = 'Форма успешно заполнена.'
-            return render(request, 'wedding/wrapper.html', {"form": page_form,'success_message': success_message})
+            return HttpResponse(f'<h3>{success_message}</h3>')
         else:
             return HttpResponse('<h3>произошла ошибка</h3>')
 
